@@ -1,0 +1,32 @@
+{
+  "name": "justincdotme/laravelOpenCharge",
+  "description": "A fluent interface for the Open Charge POI API supporting Laravel 5.x, Lumen 5.x",
+  "keywords": [
+    "laravel",
+    "opencharge",
+    "open",
+    "charge",
+    "charging station",
+    "ev"
+  ],
+  "authors": [
+    {
+      "name": "Justin Christenson",
+      "email": "info@justinc.me"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Justincdotme\\OpenCharge\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "illuminate/support": "~5",
+    "php": ">=5.4.0",
+    "guzzlehttp/guzzle": "~5.3|~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6"
+  }
+}
