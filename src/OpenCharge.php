@@ -1,6 +1,5 @@
 <?php namespace Justincdotme\OpenCharge;
 
-use Exception;
 use Illuminate\Contracts\Config\Repository as Config;
 use Justincdotme\OpenCharge\Interfaces\HttpClientInterface;
 use Justincdotme\OpenCharge\Interfaces\OpenChargeInterface;
