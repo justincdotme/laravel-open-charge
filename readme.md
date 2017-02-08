@@ -10,7 +10,7 @@
 ## Installation
     
 ### Lumen 5.* Installation
-Install the application using Composer
+Install the package using Composer
 
     composer install justincdotme/loc
 
@@ -24,7 +24,7 @@ Register the Service Provider by adding the following to bootstrap/app.php
     
     
 ### Laravel 5.* Installation
-Install the application using Composer
+Install the package using Composer
 
     composer install justincdotme/loc
     
