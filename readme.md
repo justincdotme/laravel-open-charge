@@ -79,12 +79,12 @@ Register the Service Provider to the providers array in config/app.php
 Additional documentation on the Open Charge Map API is beyond the scope of this readme and can be located at [Open Charge Map POI API](https://openchargemap.org/site/develop/api)
 ## Available Methods
 
-Get a collection of stations.
+Get a collection of stations. Must be the final method in the chain.
 
     OpenCharge::get()
 
 
-Get a list of stations as a raw string.
+Get a list of stations as a raw string. Must be the final method in the chain.
 
     OpenCharge::getRaw()
 
