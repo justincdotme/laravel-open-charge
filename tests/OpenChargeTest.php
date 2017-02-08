@@ -8,14 +8,14 @@ class OpenChargeTest extends TestCase
     protected $client;
     protected $config;
 
-    public function __construct( $name = null, array $data = [], $dataName = '' )
+    public function __construct($name = null, array $data = [], $dataName = '')
     {
-        $this->config = $this->getMockBuilder( Illuminate\Contracts\Config\Repository::class )
+        $this->config = $this->getMockBuilder(Illuminate\Contracts\Config\Repository::class)
             ->getMock();
-        $this->client = $this->getMockBuilder( Justincdotme\OpenCharge\Interfaces\HttpClientInterface::class )
-            ->setMethods( [ 'get' ] )
+        $this->client = $this->getMockBuilder(Justincdotme\OpenCharge\Interfaces\HttpClientInterface::class)
+            ->setMethods(['get'])
             ->getMock();
-        parent::__construct( $name, $data, $dataName );
+        parent::__construct($name, $data, $dataName);
     }
 
     /**
@@ -23,8 +23,8 @@ class OpenChargeTest extends TestCase
      */
     public function it_returns_collection_for_get_method()
     {
-        $openCharge = new OpenCharge( $this->client, $this->config );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $openCharge->get() );
+        $openCharge = new OpenCharge($this->client, $this->config);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $openCharge->get());
     }
 
     /**
@@ -32,8 +32,8 @@ class OpenChargeTest extends TestCase
      */
     public function it_returns_string_for_getRaw_method()
     {
-        $openCharge = new OpenCharge( $this->client, $this->config );
-        $this->assertInternalType( 'string', $openCharge->getRaw() );
+        $openCharge = new OpenCharge($this->client, $this->config);
+        $this->assertInternalType('string', $openCharge->getRaw());
     }
 
     /**
@@ -42,30 +42,30 @@ class OpenChargeTest extends TestCase
     public function it_passed_correct_filters_to_http_client_collaborator()
     {
         $this->client
-            ->expects( $this->once() )
-            ->method( 'get' )
+            ->expects($this->once())
+            ->method('get')
             ->with(
                 $this->anything(),
-                $this->callback( function ( $appliedFilters ) {
+                $this->callback(function ($appliedFilters) {
                     $expectedFilters = [
                         'distance',
                         'maxresults',
                         'output',
                         'verbose',
                     ];
-                    foreach ( $expectedFilters as $filter ) {
-                        if ( !array_key_exists( $filter, $appliedFilters ) ) {
-                             return false;
+                    foreach ($expectedFilters as $filter) {
+                        if (!array_key_exists($filter, $appliedFilters)) {
+                            return false;
                         }
                     }
                     return true;
                 })
             );
-        $openCharge = new OpenCharge( $this->client, $this->config );
-        $openCharge->distance( 4 )
-            ->limit( 4 )
-            ->output( 'xml' )
-            ->verbose( true )
+        $openCharge = new OpenCharge($this->client, $this->config);
+        $openCharge->distance(4)
+            ->limit(4)
+            ->output('xml')
+            ->verbose(true)
             ->get();
     }
 }
