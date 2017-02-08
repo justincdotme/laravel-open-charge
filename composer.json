@@ -1,11 +1,11 @@
 {
   "name": "justincdotme/laravelOpenCharge",
-  "description": "A fluent interface for the Open Charge POI API supporting Laravel 5.x, Lumen 5.x",
+  "description": "Laravel Open Charge provides a fluent wrapper for the Open Charge Map POI API supporting Laravel 5.x, Lumen 5.x",
   "keywords": [
     "laravel",
-    "opencharge",
-    "open",
-    "charge",
+    "lumen",
+    "open charge",
+    "map",
     "charging station",
     "ev"
   ],
