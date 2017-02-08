@@ -41,22 +41,26 @@ class OpenChargeTest extends TestCase
      */
     public function it_passed_correct_filters_to_http_client_collaborator()
     {
-        $this->client->expects( $this->once() )->method( 'get' )->with( $this->anything(), $this->callback( function ( $appliedFilters ) {
-            $expectedFilters = [
-                'distance',
-                'maxresults',
-                'output',
-                'verbose',
-            ];
-            $filtersPresent = true;
-            foreach ( $expectedFilters as $filter ) {
-                if ( !array_key_exists( $filter, $appliedFilters ) ) {
-                    $filtersPresent = false;
-                }
-            }
-            return $filtersPresent;
-        } )
-        );
+        $this->client
+            ->expects( $this->once() )
+            ->method( 'get' )
+            ->with(
+                $this->anything(),
+                $this->callback( function ( $appliedFilters ) {
+                    $expectedFilters = [
+                        'distance',
+                        'maxresults',
+                        'output',
+                        'verbose',
+                    ];
+                    foreach ( $expectedFilters as $filter ) {
+                        if ( !array_key_exists( $filter, $appliedFilters ) ) {
+                             return false;
+                        }
+                    }
+                    return true;
+                })
+            );
         $openCharge = new OpenCharge( $this->client, $this->config );
         $openCharge->distance( 4 )
             ->limit( 4 )
