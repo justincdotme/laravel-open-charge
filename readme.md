@@ -36,9 +36,9 @@ Register the Service Provider to the providers array in config/app.php
      ...
      ]
     
- Optionally
+ Optionally: Publish the config with the following command in Laravel:
  
-    If for some reason the POI API endpoint changes, run php artisan vendor:publish and edit app/config.php with the new endpoint URL.
+    php artisan vendor:publish and edit app/config.php
     
 ## Usage
 
