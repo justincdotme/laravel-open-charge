@@ -42,8 +42,6 @@ Register the Service Provider to the providers array in config/app.php
     
 ## Usage
 
-The app provides a Facade, or if you prefer, you can inject the OpenChargeInterface into any constructor or method.
-
 ####Facade
     use Illuminate\Http\Request;
     
