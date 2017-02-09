@@ -8,7 +8,7 @@
 ### Lumen 5.* Installation
 Install the package using Composer
 
-    composer install justincdotme/loc
+    composer require justincdotme/laravel-open-charge
 
 You can optionally enable Facades by uncommenting the following from bootstrap/app.php
 
