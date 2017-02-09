@@ -1,20 +1,16 @@
 # Laravel Open Charge
  Laravel Open Charge provides a fluent wrapper for the [Open Charge Map POI API](https://openchargemap.org/site/develop/api)
  
- The goal of this project is to abstract away the HTTP layer, endpoint and URI params so that the developer can focus on their application rather than an Open Charge Map API implementation.
-   
-
-## Requirements
- - This application requires Laravel 5.* OR Lumen 5.*
+ The goal of this project is to enable the developer can more easily focus on their application by creating a layer of abstraction on top of the Open Charge API.
 
 ## Installation
-    
+######This application requires Laravel 5.* OR Lumen 5.*
 ### Lumen 5.* Installation
 Install the package using Composer
 
     composer install justincdotme/loc
 
-If you'd like to use the Facade, first enable Facades by uncommenting the following from bootstrap/app.php
+You can optionally enable Facades by uncommenting the following from bootstrap/app.php
 
     $app->withFacades();
     
