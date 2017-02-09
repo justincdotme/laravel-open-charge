@@ -1,5 +1,5 @@
 {
-  "name": "justincdotme/laravelOpenCharge",
+  "name": "justincdotme/laravel-open-charge",
   "description": "Laravel Open Charge provides a fluent wrapper for the Open Charge Map POI API supporting Laravel 5.x, Lumen 5.x",
   "keywords": [
     "laravel",
