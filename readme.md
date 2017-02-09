@@ -49,7 +49,7 @@ Register the Service Provider to the providers array in config/app.php
         ->limit(4)
         ->get();    
         
-####Method Injection
+####Constructor/Method Injection
     use Illuminate\Http\Request;
     use Justincdotme\OpenCharge\Interfaces\OpenChargeInterface;
 
