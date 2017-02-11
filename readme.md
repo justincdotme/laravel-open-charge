@@ -64,6 +64,13 @@ Register the Service Provider to the providers array in config/app.php
              ->get(); 
     }
         
+####Using OpenCharge::filters() method instead of chaining filter methods
+        
+    OpenCharge::filters([
+         'distance' => 10,
+         'maxresults' => 20
+    ])->get();
+
   **Note** 
   
   Please note that the get() method returns a Collection from a JSON string, as such, is not compatible with output types other than JSON.
@@ -84,6 +91,10 @@ Get a list of stations as a raw string. Must be the final method in the chain.
 
     OpenCharge::getRaw()
 
+Apply an array of filters instead of calling filter methods individually. Filters should be an associative array with 
+keys that match the list of available service params at: https://openchargemap.org/site/develop/api
+  
+    OpenCharge::filters( $filters )
 
 Latitude reference for distance calculation
 
