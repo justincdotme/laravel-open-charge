@@ -70,6 +70,20 @@ class OpenCharge implements OpenChargeInterface
     }
 
     /**
+     * Apply an array of filters to the query. Filter list available
+     * at https://openchargemap.org/site/develop/api
+     * Use list instead of method names here.
+     *
+     * @param array $filters
+     * @return $this
+     */
+    public function filters(array $filters)
+    {
+        $this->filters = array_merge($this->filters, $filters);
+        return $this;
+    }
+
+    /**
      * Get remote data via the Http Client Adapter.
      * @return mixed
      */
