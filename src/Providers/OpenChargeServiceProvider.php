@@ -41,6 +41,12 @@ class OpenChargeServiceProvider extends ServiceProvider
             \Justincdotme\OpenCharge\Interfaces\HttpClientInterface::class,
             \Justincdotme\OpenCharge\HttpClientAdapter::class
         );
+
+        $this->app->bind(
+            \Justincdotme\OpenCharge\Interfaces\OpenChargeInterface::class,
+            \Justincdotme\OpenCharge\OpenCharge::class
+        );
+
         $this->app->singleton('openCharge',function($app)
         {
             return $app->make(\Justincdotme\OpenCharge\OpenCharge::class);
